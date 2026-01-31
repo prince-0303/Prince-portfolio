@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color-scheme: dark;
+
+  /* Deep Space Background */
+  --bg-void: #050505;
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --border-neon: rgba(0, 243, 255, 0.3);
+
+  /* Neon Accents */
+  --neon-cyan: #00f3ff;
+  --neon-magenta: #ff00aa;
+  --neon-purple: #bd00ff;
+
+  --text-main: #ffffff;
+  --text-muted: #8892b0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-void);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(189, 0, 255, 0.05) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.05) 0%, transparent 25%);
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-neon);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-purple);
+  border-radius: 3px;
+}
