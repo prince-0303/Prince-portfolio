@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
 
   return (
     <div className="bg-[var(--bg-void)] min-h-screen text-[var(--text-main)] selection:bg-[var(--neon-cyan)] selection:text-black">
+      <CustomCursor />
       <Navbar />
       <main className="relative z-10">
         <Hero />

@@ -110,7 +110,7 @@ const Form = () => {
             <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full py-3 bg-[var(--neon-purple)]/20 border border-[var(--neon-purple)] text-[var(--neon-purple)] font-bold rounded hover:bg-[var(--neon-purple)] hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-3 bg-white/10 border border-white/50 text-white font-bold rounded hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {status === 'submitting' ? (
                     <Loader2 size={16} className="animate-spin" />

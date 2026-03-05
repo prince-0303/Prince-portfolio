@@ -56,3 +56,8 @@ body {
   background: var(--neon-purple);
   border-radius: 3px;
 }
+
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
