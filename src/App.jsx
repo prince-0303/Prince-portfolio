@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
+import Background from './components/Background';
 
 function App() {
 
@@ -55,7 +56,8 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[var(--bg-void)] min-h-screen text-[var(--text-main)] selection:bg-[var(--neon-cyan)] selection:text-black">
+    <div className="min-h-screen text-[var(--text-main)] selection:bg-[var(--neon-cyan)] selection:text-black">
+      <Background />
       <CustomCursor />
       <Navbar />
       <main className="relative z-10">
