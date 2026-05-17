@@ -67,19 +67,29 @@ const Projects = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fetch the 4 most recently updated repositories
-        fetch('https://api.github.com/users/prince-0303/repos?sort=updated&per_page=5')
-            .then(res => res.json())
+        const pinnedRepos = [
+            'Thapasya-ERP-System',
+            'Thapasya-arts-school-website',
+            'petfood-backend',
+            'stay-rentals-backend'
+        ];
+
+        // Fetch specific pinned repositories
+        Promise.all(
+            pinnedRepos.map(repoName =>
+                fetch(`https://api.github.com/repos/prince-0303/${repoName}`)
+                    .then(res => {
+                        if (!res.ok) throw new Error(`Failed to fetch ${repoName}`);
+                        return res.json();
+                    })
+            )
+        )
             .then(data => {
-                // Filter out the profile README repo if it's there, then take top 4
-                const filteredRepos = data
-                    .filter(repo => repo.name !== 'prince-0303')
-                    .slice(0, 4);
-                setRepos(filteredRepos);
+                setRepos(data);
                 setLoading(false);
             })
             .catch(err => {
-                console.error("Failed to fetch repos:", err);
+                console.error("Failed to fetch pinned repos:", err);
                 setLoading(false);
             });
     }, []);
